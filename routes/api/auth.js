@@ -7,6 +7,7 @@ const config = require('config');
 const {check, validationResult} = require('express-validator');
 
 const User = require('../../models/User');
+
 //@route  GET api/auth
 //@access Public
 router.get('/', auth, async (req, res) => {
@@ -24,7 +25,7 @@ router.get('/', auth, async (req, res) => {
 //@desc   Authenticate user & get token
 router.post('/', [
         check('email', "Пожалуйста, укажите ваш email").isEmail(),
-        check('password', "Вы заюыли указать пароль").exists()
+        check('password', "Слишком короткий пароль. Минимальная длина 6 символов").isLength({min: 6})
     ],
     async (req, res) => {
         const errors = validationResult(req);

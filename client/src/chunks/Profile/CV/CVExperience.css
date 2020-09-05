@@ -1,0 +1,105 @@
+.profile > .load-container > .profile-experience{
+    border: 2px solid #eeeeee;
+    border-radius: 4px;
+    padding: 15px 25px 20px 25px;
+    margin-bottom: 15px;
+}
+.profile-experience > .exp-list{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.profile-experience > .exp-list > .exp-item{
+    display: block;
+    border-top: 1px solid #eee;
+    padding: 20px 0;
+}
+.profile-experience > .exp-list > .exp-item:first-child{
+    border-top: 1px solid transparent;
+}
+.profile-experience > .exp-list > .exp-item:last-child{
+    padding: 20px 0 0 0;
+}
+.profile-experience > .exp-list > .exp-item > .exp-date{
+    display: block;
+    position: relative;
+}
+.profile-experience > .exp-list > .exp-item > .exp-date > .date-item {
+    display: inline-block;
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 13px;
+    padding: 5px 10px;
+    background-color: #c0e3e7;
+    position: relative;
+}
+.profile-experience > .exp-list > .exp-item > .exp-date > .date-item::after {
+    content: "";
+    top: 0;
+    left: 100%;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-color: #c0e3e7;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-right: 10px solid transparent;
+    border-left: 10px solid #c0e3e7
+}
+.profile-experience > .exp-list > .exp-item > .exp-date > .date-item > .from{
+    padding: 0 5px;
+}
+.profile-experience > .exp-list > .exp-item > .exp-date > .date-item > .to{
+    padding: 0 5px;
+}
+.profile-experience > .exp-list > .exp-item > .exp-date > .date-item > .current{
+    padding: 0 5px;
+}
+.profile-experience > .exp-list > .exp-item > .exp-title{
+    display: block;
+    padding: 5px 10px 0 10px;
+}
+.profile-experience > .exp-list > .exp-item > .exp-title > h3{
+    font-family: "ComicMedium", cursive;
+    font-size: 20px;
+    font-weight: normal;
+    color: #542700;
+    word-break: break-word;
+    word-wrap: break-spaces;
+}
+.profile-experience > .exp-list > .exp-item > .exp-company{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+.profile-experience > .exp-list > .exp-item > .exp-company > h4{
+    font-family: "OpenSansRegular", sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #757575;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+.profile-experience > .exp-list > .exp-item > .exp-location{
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 14px;
+}
+.profile-experience > .exp-list > .exp-item > .exp-location > p{
+    word-break: break-word;
+    word-wrap: break-word;
+    padding: 0 10px;
+    border-left: 1px solid #cdcdcd;
+}
+.profile-experience > .exp-list > .exp-item > .exp-description{
+    display: block;
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5px 0 10px 0;
+}
+.profile-experience > .exp-list > .exp-item > .exp-description > p{
+    word-break: break-word;
+    word-wrap: break-word;
+}

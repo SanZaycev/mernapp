@@ -1,0 +1,180 @@
+.dashboard-profile{
+    display: block;
+    text-align: left;
+    position: relative;
+}
+.dashboard-profile .profile-title {
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dashboard-profile .profile-title > h2 {
+    font-family: "MontserratMedium", sans-serif;
+    font-size: 18px;
+    padding: 0 0 0 10px;
+    font-weight: normal;
+    border-left: 3px solid #0EA744;
+    display: block;
+    margin-bottom: 10px;
+}
+.dashboard-profile > .load-container{
+    display: block;
+    position: relative;
+}
+.dashboard-profile > .load-container > .profile-about {
+    border: 2px solid #eeeeee;
+    border-radius: 4px;
+    padding: 15px 25px 20px 25px;
+    margin-bottom: 15px;
+}
+.dashboard-profile > .load-container > .profile-about > .bio-box{
+    display: block;
+    position: relative;
+    border-bottom:  1px solid #eee;
+    padding: 15px 0;
+}
+.dashboard-profile > .load-container > .profile-about > .bio-box > .bio-text{
+    font-family: OpenSansRegular, sans-serif;
+    font-size: 14px;
+}
+.dashboard-profile > .load-container > .profile-about > .profile-info{
+    padding: 15px 0 0 0;
+}
+.dashboard-profile > .load-container > .profile-about > .profile-info > .info-list{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.dashboard-profile > .load-container > .profile-about > .profile-info > .info-list > .info-row{
+    padding: 0 0 10px 0;
+}
+.dashboard-profile > .load-container > .profile-about > .profile-info > .info-list > .info-row:last-child{
+    padding: 0;
+}
+.dashboard-profile > .load-container > .profile-about > .profile-info > .info-list > .info-row > .icon{
+    font-size: 14px;
+    padding: 0 5px 0 0;
+    color: #0EA744;
+}
+.dashboard-profile > .load-container > .profile-about > .profile-info > .info-list > .info-row > .iconl{
+    font-size: 14px;
+    padding: 0 5px 0 0;
+    color: #0EA744;
+}
+.dashboard-profile > .load-container > .profile-about > .profile-info > .info-list > .info-row > .info-text {
+    font-family: "OpenSansRegular", sans-serif;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+.dashboard{
+    border: 2px solid #eeeeee;
+    border-radius: 4px;
+    padding: 15px 25px 20px 25px;
+    margin-bottom: 15px;
+}
+.dashboard > .lead-box{
+    display: block;
+    min-height: 30px;
+}
+.dashboard > .lead-box > .back-btn{
+    display: inline-block;
+}
+.dashboard > .lead-box > .back-btn > .back-text{
+    font-family: "ComicRegular", cursive;
+    font-size: 18px;
+    padding: 0 5px;
+}
+.dashboard > .lead-box > .back-btn > .back-text > .back-icon{
+    display: inline-block;
+}
+.dashboard > .lead-box > .back-btn:hover > .back-text{ text-decoration: underline; }
+.dashboard > .lead-box > .lead-title {
+    font-family: "MontserratMedium", sans-serif;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 27px;
+    color: #333333;
+}
+.dashboard > .lead-box > .lead-title > .lead-name{
+    text-transform: capitalize;
+}
+.dashboard > .lead-box > .lead-title > .iconl{
+    font-size: 16px;
+    color: #0EA744;
+    padding: 0 5px 0 0;
+}
+.dashboard > .dash-links{
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 2px #0EA744;
+    margin: 15px 0 0 0;
+}
+.dashboard > .dash-links > .dash-tab{
+    display: block;
+    position: relative;
+    padding: 7px 12px 10px 12px;
+    text-align: center;
+    -webkit-transition: background-color .15s linear;
+    -moz-transition: background-color .15s linear;
+    -ms-transition: background-color .15s linear;
+    -o-transition: background-color .15s linear;
+    transition: background-color .15s linear;
+}
+.dashboard > .dash-links > .dash-tab:hover{
+    background-color: #0EA744;
+}
+.dashboard > .dash-links > .dash-tab:hover > .dash-text{ color: #ffffff; }
+.dashboard > .dash-links > .dash-tab:hover > .icon{ color: #ffffff; }
+.dashboard > .dash-links > .dash-tab.active{
+    background-color: #0EA744;
+}
+.dashboard > .dash-links > .dash-tab > .dash-text {
+    font-family: "RobotoMedium", sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #333333;
+    -webkit-transition: color .15s linear;
+    -moz-transition: color .15s linear;
+    -ms-transition: color .15s linear;
+    -o-transition: color .15s linear;
+    transition: color .15s linear;
+}
+.dashboard > .dash-links > .dash-tab.active > .dash-text{
+    color: #ffffff;
+}
+.dashboard > .dash-links > .dash-tab.active > .icon{
+    color: #ffffff;
+}
+.dashboard > .dash-links > .dash-tab > .icon{
+    display: inline-block;
+    padding-right: 7px;
+    font-size: 14px;
+    color: #542700;
+    -webkit-transition: color .15s linear;
+    -moz-transition: color .15s linear;
+    -ms-transition: color .15s linear;
+    -o-transition: color .15s linear;
+    transition: color .15s linear;
+}
+
+
+
+
+
+
+
+
+

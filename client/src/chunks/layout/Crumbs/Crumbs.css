@@ -1,0 +1,32 @@
+/* ==== Crumbslist ==== */
+.crumbslist{
+    display: block;
+    list-style: none;
+    padding: 0 0 0 10px;
+}
+.crumbslist > .crumb{
+    display: inline-block;
+}
+.crumbslist > .crumb > .crumb-link{
+    display: inline-block;
+}
+.crumbslist > .crumb > .crumb-link > span{
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #5e4c3e;
+    cursor: pointer;
+}
+.crumbslist > .crumb > .crumb-link:hover > span{ text-decoration: underline; }
+.crumbslist > .crumb.current > .crumb-link:hover > span{ text-decoration: none; }
+.crumbslist > .crumb.current > .crumb-link > span{
+    color: #707070;
+    cursor: initial;
+}
+.crumbslist > .crumb > .separator{
+    display: inline-block;
+    font-family: "RobotoBold", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #5e4c3e;
+}

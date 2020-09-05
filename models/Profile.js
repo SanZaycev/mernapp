@@ -11,10 +11,7 @@ const ProfileSchema = new mongoose.Schema({
     website: {
         type: String
     },
-    country: {
-        type: String
-    },
-    city: {
+    location: {
         type: String
     },
     status: {

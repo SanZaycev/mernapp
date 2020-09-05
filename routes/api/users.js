@@ -7,13 +7,14 @@ const config = require('config');
 const {check, validationResult} = require('express-validator');
 
 const User = require('../../models/User');
+
 //@route  POST api/users
 //@access Public
 //@desc   Register User
 router.post('/', [
-        check('name', "Как Вас зовут?").not().isEmpty(),
+        check('name', "Вы забыли указать имя").not().isEmpty(),
         check('email', "Пожалуйста, укажите ваш email").isEmail(),
-        check('password', "Пароль может содержать 6 и более символов").isLength({min: 6})
+        check('password', "Минимальная длина пароля 6 символов").isLength({min: 6})
     ],
     async (req, res) => {
         const errors = validationResult(req);

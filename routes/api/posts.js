@@ -4,7 +4,6 @@ const auth = require('../../middleware/auth');
 const {check, validationResult} = require('express-validator');
 
 const Post = require('../../models/Post');
-const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
 //@route  POST api/posts
@@ -42,7 +41,7 @@ router.post('/', [
 //@desc   Get all a posts
 //@access Private
 
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
    try{
         const posts = await Post.find().sort({ date: -1 });
         res.json(posts);
@@ -176,7 +175,7 @@ router.post('/comment/:post_id', [
 
             post.comments.unshift(newComment);
             await post.save();
-            res.json(post.comments);
+            await res.json(post.comments);
         } catch (err){
             console.error(err.message);
             res.status(500).send('Server Error');

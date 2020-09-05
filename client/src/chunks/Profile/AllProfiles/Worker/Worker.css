@@ -1,0 +1,197 @@
+.worker-item{
+   border: 2px solid #eee;
+    margin: 25px 0;
+    border-radius: 4px;
+}
+.worker-item > .worker-content{
+    display: flex;
+    position: relative;
+    width: 100%;
+    padding: 20px 75px 20px 155px;
+    min-height: 150px;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+.worker-item > .worker-content > .worker-rating{
+    display: block;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+}
+.worker-item > .worker-content > .worker-rating > .num{
+    font-family: "MontserratMedium", sans-serif;
+    color: #542700;
+    font-size: 18px;
+    line-height: 30px;
+    padding-left: 5px;
+}
+.worker-item > .worker-content > .worker-rating > .iconl{
+    color: #542700;
+    font-size: 18px;
+    line-height: 30px;
+}
+.worker-item > .worker-content > .worker-link{
+    display:block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+}
+.worker-item > .worker-content > .worker-link > .worker-thumb{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.worker-item > .worker-content > .worker-info{
+    display: block;
+}
+.worker-item > .worker-content > .worker-info > .name-box{
+    display: block;
+}
+/*.worker-item > .worker-content > .worker-info > .name-box > h4{
+    font-family: "ComicRegular", sans-serif;
+    font-size: 21px;
+    line-height: 28px;
+    font-weight: normal;
+}*/
+.worker-item > .worker-content > .worker-info > .name-box > h4{
+    font-family: "MontserratMedium", sans-serif;
+    font-size: 18px;
+    line-height: 25px;
+}
+.worker-item > .worker-content > .worker-info > .name-box > h4:first-letter { text-transform:uppercase; }
+.worker-item > .worker-content > .worker-info > .name-box > h4 > .worker-link{
+    color: #542700;
+}
+.worker-item > .worker-content > .worker-info > .name-box > h4 > .worker-link:hover{ text-decoration: underline; }
+.worker-item > .worker-content > .worker-info > .name-box > h5{
+    font-family: "MontserratMedium", sans-serif;
+    font-size: 16px;
+    margin-top: 5px;
+    font-weight: 400;
+    color: #171717;
+}
+.worker-item > .worker-content > .worker-info > .meta-box{
+    display: block;
+}
+.worker-item > .worker-content > .worker-info > .meta-box > .worker-location{
+    display: block;
+    color: #171717;
+    font-size: 15px;
+    line-height: 30px;
+}
+.worker-item > .worker-content > .worker-info > .meta-box > .worker-location > .icon{
+    color: var(--primary-color);
+    font-size: 15px;
+    line-height: 30px;
+    margin-right: 5px;
+}
+.worker-item > .worker-body{
+    padding: 10px 20px 20px 20px;
+    display: block;
+    font-family: "OpenSansRegular",sans-serif;
+    color: #5E5E5E;
+    font-size: 14px;
+    font-weight: 400;
+}
+.worker-item > .worker-body > .status-box{
+    position: relative;
+    padding: 15px 30px;
+    background-color: #f2f7fb;
+    border-radius: 5px;
+}
+.worker-item > .worker-body > .status-box::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 49px;
+    border-right: 14px solid transparent;
+    border-bottom: 14px solid #f2f7fb;
+    border-left: 14px solid transparent;
+}
+.worker-item > .worker-body > .status-box > .worker-status{
+    color: #5E5E5E;
+    line-height: 26px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.worker-item > .worker-body > .worker-skills{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+.worker-item > .worker-body > .worker-skills > .tag-list{
+    display: inline-block;
+    padding-top: 20px;
+}
+.worker-item > .worker-body > .worker-skills > .tag-list > .tag{
+    background-color: #f1f1f1;
+    color: #5E5E5E;
+    padding: 7px 8px;
+    margin-right: 8px;
+    font-size: 13px;
+    border-radius: 4px;
+    line-height: 20px;
+    white-space: nowrap;
+    display: inline-block;
+}
+.worker-item > .worker-body > .worker-skills > .worker-experience{
+    display: inline-block;
+    padding-top: 20px;
+}
+.worker-item > .worker-body > .worker-skills > .worker-experience > .experience-btn{
+    display: inline-block;
+    position: relative;
+    padding: 7px 17px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

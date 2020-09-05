@@ -1,2 +1,5 @@
-npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request
+npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request express-fileupload
 npm i -D nodemon concurrently
+npx create-react-app client 
+dependencies for react: npm i axios react-router-dom redux react-redux redux-thunk redux-devtools-extension moment react-moment uuid npm i react-image-crop --save            
+delte git completly: rm -rf .git

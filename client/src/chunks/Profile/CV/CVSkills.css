@@ -1,0 +1,48 @@
+.profile > .load-container > .profile-skills {
+    border: 2px solid #eeeeee;
+    border-radius: 4px;
+    padding: 15px 25px 20px 25px;
+    margin-bottom: 15px;
+}
+.profile > .load-container > .profile-skills .skills-list{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    -o-flex-direction: row;
+    flex-direction: row;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 17px 0 0 0;
+}
+.profile > .load-container > .profile-skills .skills-list > .skill{
+    display: inline-block;
+    margin: 5px;
+    padding: 2px 10px 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background-color: #eee;
+}
+.profile > .load-container > .profile-skills .skills-list > .skill > .skill-text{
+    font-family: "OpenSansBold", sans-serif;
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    padding: 0 5px;
+}
+.profile > .load-container > .profile-skills .skills-list > .skill > .icon{
+    font-size: 14px;
+    color: #0EA744;
+}

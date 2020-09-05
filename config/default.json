@@ -1,5 +1,6 @@
 {
   "mongoURI": "mongodb://localhost:27017/blogfermer",
+  "mongo": "mongodb://Sannylee:36007007yalta@localhost:27017/blogfermer",
   "jwtSecret": "GreenSecretToken",
   "githubClientId": "e5da3de684d0a30704dd",
   "githubSecret": "8e01806967235172fb0099bcad7a83b1d98e73f9"

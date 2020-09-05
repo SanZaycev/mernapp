@@ -1,0 +1,483 @@
+/* ==== Profile Sidebar ==== */
+#uside{
+    padding-right: 0;
+}
+.user-banner{
+    position: relative;
+    margin: 15px 0;
+    background-color: #f5f5f5;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 2px solid #f5f5f5;
+}
+.user-banner > .banner-inner{
+    display: block;
+    width: 100%;
+    height: 200px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+}
+.profile-sidebar{
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.profile-sidebar > .sidebar_inner{
+    display: block;
+    width: 100% !important;
+}
+.sidebar_inner > .profile-widget > .profile-head{
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 2px solid #eee;
+    background-color: #fff;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.profile-head > .sidebar-avatar{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+.profile-head > .avatarbox{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 0 0 0 90px;
+    min-height: 90px;
+    width: 100%;
+}
+.profile-head > .avatarbox > .avatar{
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    -webkit-background-size: cover;
+    background-size: cover;
+    line-height: 0;
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+.profile-head > .avatarbox > .profile-name{
+    font-size: 16px;
+    font-family: "MontserratBold", sans-serif;
+    font-weight: 400;
+    line-height: 18px;
+    color: #542700;
+    margin: 0;
+}
+.profile-head > .profile-info{
+    display: block;
+    padding: 5px 0 0 0;
+}
+.profile-head > .profile-info > .profile-profy{
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 13px;
+    color: #333;
+    line-height: 18px;
+    position: relative;
+    padding: 0 0 0 20px;
+}
+.profile-head > .profile-info > .profile-profy > .icon{
+    font-family: "Icons";
+    display: inline-block;
+    font-size: 13px;
+    color: #92c800;
+    margin-right: 5px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+.profile-head > .profile-info > .profile-address{
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 13px;
+    color: #333;
+    line-height: 18px;
+    position: relative;
+    padding: 0 0 0 20px;
+}
+.profile-head > .profile-info > .profile-address > .icon{
+    font-family: "Icons";
+    display: inline-block;
+    color: #92c800;
+    margin-right: 5px;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+}
+.profile-head > .profile-info > .profile-comment{
+    position: relative;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f2f7fa;
+    font-size: 14px;
+    line-height: 18px;
+    word-wrap: break-word;
+}
+.profile-head > .profile-info > .profile-comment::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    border-right: 8px solid transparent;
+    border-bottom: 14px solid #f2f7fa;
+    border-left: 8px solid transparent;
+}
+.profile-head > .profile-info > .profile-comment > p{
+    font-family: "OpenSansRegular", sans-serif;
+    font-size: 13px;
+    color: #333;
+    line-height: 18px;
+}
+.profile-head > .chat-btn{
+    display: block;
+    padding: 15px 0 0 0;
+}
+.profile-head > .chat-btn > .chat-link{
+    display: block;
+    position: relative;
+    padding: 7px 25px 10px 5px;
+    font-family: "ComicRegular", cursive;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #542700;
+    background-color: #fff;
+    border: 2px solid #92c800;
+    border-radius: 4px;
+    -webkit-transition: background-color .1s linear, color .1s linear;
+    -o-transition: background-color .1s linear, color .1s linear;
+    transition: background-color .1s linear, color .1s linear;
+}
+.profile-head > .chat-btn > .chat-link > .icon{
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    font-family: "Icons";
+    margin-left: 5px;
+    color: #92c800;
+    -webkit-transition: color .1s linear;
+    -o-transition: color .1s linear;
+    transition: color .1s linear;
+}
+.profile-head > .chat-btn > .chat-link:hover{
+    text-decoration: none;
+    color: #fff;
+    background-color: #92c800;
+}
+.profile-head > .chat-btn > .chat-link:hover > .icon{ color: #fff; }
+.sidebar_inner > .profile-widget > .profile-nav{
+    display: block;
+    width: 100%;
+    position: relative;
+    padding: 15px;
+}
+.profile-nav > .nav-list{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.profile-nav > .nav-list > .nav-item{
+    display: block;
+    position: relative;
+    padding: 0 0 0 20px;
+}
+.profile-nav > .nav-list > .nav-item > .nav-link{
+    display: inline-block;
+    font-family: "MontserratMedium", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    padding: 5px 7px;
+}
+.profile-nav > .nav-list > .nav-item.current > .nav-link{
+    background: #eee;
+    border-radius: 4px;
+    pointer-events: none;
+}
+.profile-nav .purchases{ border-top: 1px solid #eee; margin-top: 10px; }
+.profile-nav .sales{ border-bottom: 1px solid #eee; margin-bottom: 10px; }
+.profile-nav > .nav-list > .nav-item > .nav-link:hover{ text-decoration: underline; }
+.profile-nav > .nav-list > .nav-item.current > .nav-link:hover{ text-decoration: none; }
+.profile-nav > .nav-list > .nav-item > .icon{
+    font-family: "Icons";
+    color: #92c800;
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    top: 6px;
+}
+.profile-widget > .profile-nav > .nav-list > .nav-item > .icon-user{ left: 2px; }
+.profile-nav > .nav-list > .nav-item > .iconl{
+    font-family: "Icons";
+    color: #92c800;
+    font-size: 13px;
+    position: absolute;
+    left: 0;
+    top: 6px;
+}
+.profile-nav > .nav-list > .nav-item > .num{
+    font-family: "ComicBold", cursive;
+    color: #92c800;
+    margin-left: 5px;
+}
+.sidebar_inner > .profile-widget > .profile-subscribe{
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 2px solid #eee;
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.profile-subscribe > .subscribe-text{
+    display: block;
+    font-family: "OpenSansRegular", sans-serif;
+    font-size: 13px;
+    color: #333;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.profile-subscribe > button{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 7px 27px 10px 10px;
+    background-color: #fff;
+    border: 2px solid #92c800;
+    border-radius: 4px;
+    -webkit-transition: background-color .1s linear;
+    -o-transition: background-color .1s linear;
+    transition: background-color .1s linear;
+}
+.profile-subscribe > button::before{
+    display: block;
+    text-align: center;
+    font-family: "ComicRegular", cursive;
+    font-size: 16px;
+    line-height: 20px;
+    color: #542700;
+    -webkit-transition: color .1s linear;
+    -o-transition: color .1s linear;
+    transition: color .1s linear;
+}
+.profile-subscribe > .subscribed{ background: #92c800; }
+.profile-subscribe > .subscribed::before{ content:"Вы подписаны"; color: #fff; }
+.profile-subscribe > .unsubscribed::before{ content:"Подписаться"; }
+.profile-subscribe > button > .icon-subscribe{
+    font-family: "Icons";
+    display: inline-block;
+    position: absolute;
+    top: 11px;
+    right: 7px;
+    margin-left: 5px;
+    color: #92c800;
+    -webkit-transition: color .1s linear;
+    -o-transition: color .1s linear;
+    transition: color .1s linear;
+}
+.profile-subscribe > .subscribed > .icon-subscribe::before{ content: "\f00c"; color: #fff; }
+.profile-subscribe > .unsubscribed > .icon-subscribe::before{ content: "\f234"; }
+.profile-subscribe > button:hover{
+    text-decoration: none;
+    background-color: #92c800;
+}
+.profile-subscribe > button:hover > .icon-subscribe::before{ color: #fff; }
+.profile-subscribe > button:hover::before{ color: #fff; }
+.sidebar_inner > .profile-widget > .profile-share{
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 15px;
+}
+.profile-share > .share-text{
+    display: block;
+    font-family: "OpenSansRegular", sans-serif;
+    font-size: 13px;
+    color: #333;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.profile-share > .social-list{
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.profile-share > .social-list > .social-item{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+}
+.profile-share > .social-list > .social-item > .social-btn{
+    background-image: url("../../assets/images/greencircle.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-transition: background-color .1s linear;
+    -o-transition: background-color .1s linear;
+    transition: background-color .1s linear;
+}
+.profile-share > .social-list > .social-item > .social-btn:hover{ background-color: #99cd4d; }
+.profile-share > .social-list > .social-item > .social-btn > .iconb{
+    font-size: 15px;
+    line-height: 26px;
+    color: #fff;
+    background-color: transparent;
+    -webkit-transition: color .1s linear;
+    -o-transition: color .1s linear;
+    transition: color .1s linear;
+}
+.claim-widget > .profile-claim{
+    display: block;
+    text-align: center;
+}
+.claim-widget > .profile-claim > .claim-text{
+    font-family: "OpenSansRegular", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+.claim-widget > .profile-claim > .claim-text:hover{ text-decoration: underline; }
+
+/*  ==  Widget Profile  == */
+.profile-sidebar{
+    -webkit-transition: top .2s linear;
+    -moz-transition: top .2s linear;
+    -ms-transition: top .2s linear;
+    -o-transition: top .2s linear;
+    transition: top .2s linear;
+}
+.profile-widget{
+    display: block;
+    border: 2px solid #eee;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.user-widget{
+    display: block;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.user-widget > .widget-body{
+    display: block;
+    text-align: center;
+}
+.user-widget > .widget-body > .widget-avatar{
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.user-widget > .widget-body > .widget-avatar > img{
+    display: inline-block;
+    vertical-align: middle;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+}
+.user-widget > .widget-info{
+    display: block;
+    position: relative;
+    border-radius: 0 0 4px 4px;
+    border-right: 2px solid #eee;
+    border-left: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+}
+.user-widget > .widget-info > .info-content{
+    display: block;
+    text-align: center;
+    background-color: #c0e3e7;
+}
+.user-widget > .widget-info > .info-content > .profile-name{
+    font-family: "MontserratMedium", sans-serif;
+    font-size: 18px;
+    padding: 10px 0 5px 0;
+}
+.user-widget > .widget-info > .info-content > .profile-name:first-letter { text-transform:uppercase; }
+.user-widget > .widget-info > .info-content > .profile-profy{
+    font-family: "RobotoRegular", sans-serif;
+    font-size: 16px;
+    color: #757575;
+    padding: 0 0 5px 0;
+}
+.user-widget > .widget-info > .info-content > .profile-social{
+    display: block;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+.user-widget > .widget-info > .info-content > .profile-social > .social-item{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+}
+.user-widget > .widget-info > .info-content > .profile-social > .social-item > .social-link:hover{
+    text-decoration: none;
+}
+.user-widget > .widget-info > .info-content > .profile-social > .social-item > .social-link:focus{
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+.user-widget > .widget-info > .info-content > .profile-social > .social-item > .social-link{
+    overflow-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+.user-widget > .widget-info > .info-content > .profile-social > .social-item > .social-link > .iconb{
+    font-size: 16px;
+}
+.user-widget > .widget-info > .download-cv-box{
+    padding: 25px;
+}
+.user-widget > .widget-info > .download-cv-box > .download-btn{
+    display: block;
+    margin: 0 auto;
+    font-family: "MontserratMedium", sans-serif;
+    font-size: 14px;
+    background-color: #000;
+    color: #ffffff;
+    text-transform: uppercase;
+    border-radius: 35px;
+    padding: 10px 15px;
+}
+

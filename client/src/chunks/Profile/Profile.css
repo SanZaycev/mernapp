@@ -1,0 +1,74 @@
+.profile{
+    display: block;
+    text-align: left;
+    position: relative;
+}
+.profile .profile-title {
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.profile .profile-title > h2 {
+    font-family: "MontserratMedium", sans-serif;
+    font-size: 18px;
+    padding: 0 0 0 10px;
+    font-weight: normal;
+    border-left: 3px solid #0EA744;
+    display: block;
+    margin-bottom: 10px;
+}
+.profile > .load-container{
+    display: block;
+    position: relative;
+}
+.profile > .load-container > .profile-about {
+    border: 2px solid #eeeeee;
+    border-radius: 4px;
+    padding: 15px 25px 20px 25px;
+    margin-bottom: 15px;
+}
+.profile-about > .bio-box{
+    display: block;
+    position: relative;
+    border-bottom:  1px solid #eee;
+    padding: 15px 0;
+}
+.profile-about > .bio-box > .bio-text{
+    font-family: OpenSansRegular, sans-serif;
+    font-size: 14px;
+}
+.profile > .profile-about > .profile-info{
+    padding: 15px 0 0 0;
+}
+.profile-info > .info-list{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.profile-info > .info-list > .info-row{
+    padding: 0 0 10px 0;
+}
+.profile-info > .info-list > .info-row:last-child{
+    padding: 0;
+}
+.profile-info > .info-list > .info-row > .icon{
+    font-size: 14px;
+    padding: 0 5px 0 0;
+    color: #0EA744;
+}
+.profile-info > .info-list > .info-row > .iconl{
+    font-size: 14px;
+    padding: 0 5px 0 0;
+    color: #0EA744;
+}
+.profile-info > .info-list > .info-row > .info-text {
+    font-family: "OpenSansRegular", sans-serif;
+    font-size: 14px;
+    padding: 0 5px;
+}
+
+
+
+
+
+

@@ -4,10 +4,12 @@ const config = require('config');
 const router = express.Router();
 const auth = require('../../middleware/auth');
 const {check, validationResult} = require('express-validator');
+const fs = require('fs');
+const settings = require('settings');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
-
+const Post = require('../../models/Post');
 
 //@route  GET api/profile/iam
 //@access Public
@@ -17,13 +19,13 @@ router.get('/iam', auth, async (req, res) => {
     try {
         const profile = await Profile.findOne({ user: req.user.id }).populate('user', ['name', 'avatar']);
         if(!profile){
-            return res.status(400).json({ msg: 'Профиль отсутствует' });
+            return await res.status(400).json({ msg: 'Профиль отсутствует' });
         }
 
-        res.json(profile);
+        await res.json(profile);
     } catch (err){
         console.err(err.message);
-        res.status(500).send('Server Error');
+        await res.status(500).send('Server Error');
     }
 });
 
@@ -35,7 +37,8 @@ router.get('/iam', auth, async (req, res) => {
 router.post('/', [
     auth, [
         check('status', 'Укажите Ваш статус').not().isEmpty(),
-        check('skills', 'Какими навыками вы обладаете?').not().isEmpty()
+        check('skills', 'Какими навыками вы обладаете?').not().isEmpty(),
+        check('profession', 'Укажите профессию').not().isEmpty()
     ]
   ],
   async (req, res) => {
@@ -43,12 +46,10 @@ router.post('/', [
     if(!errors.isEmpty()){
         return res.status(400).json({ errors: errors.array() });
     }
-
     const {
         company,
         website,
-        country,
-        city,
+        location,
         status,
         profession,
         skills,
@@ -66,19 +67,18 @@ router.post('/', [
 
     //Build profile object
     const profileFields = {};
+
     profileFields.user = req.user.id;
     if(company) profileFields.company = company;
     if(website) profileFields.website = website;
-    if(country) profileFields.country = country;
-    if(city) profileFields.city = city;
+    if(location) profileFields.location = location;
     if(status) profileFields.status = status;
     if(profession) profileFields.profession = profession;
     if(bio) profileFields.bio = bio;
     if(banner) profileFields.banner = banner;
     if(githubname) profileFields.githubname = githubname;
-    if(skills){
-        profileFields.skills = skills.split(',').map( skill => skill.trim());
-    }
+    if(skills){ profileFields.skills = skills.split(',').map( skill => skill.trim()); }
+
     profileFields.social = {};
     if(telegram) profileFields.social.telegram = telegram;
     if(vk) profileFields.social.vk = vk;
@@ -96,16 +96,16 @@ router.post('/', [
                 { $set: profileFields },
                 { new: true }
             );
-            return res.json(profile);
+            return await res.json(profile);
         }
 
         //Create Profile
         profile = new Profile(profileFields);
         await profile.save();
-        res.json(profile);
+        await res.json(profile);
     } catch(err) {
         console.error(err.message);
-        res.satus(500).send('Server Error');
+        await res.status(500).send('Server Error');
     }
   }
 );
@@ -118,10 +118,10 @@ router.post('/', [
 router.get('/', async (req, res) => {
    try{
        const profiles = await Profile.find().populate('user', ['name', 'avatar']);
-       res.json(profiles);
+       await res.json(profiles);
    } catch (err) {
         console.error(err.message);
-        res.status(500).send('Server Error');
+        await res.status(500).send('Server Error');
    }
 });
 
@@ -130,14 +130,13 @@ router.get('/', async (req, res) => {
 //@access Public
 //@desc   Get single profile
 
-router.get('/user/:user_id', async (req, res) => {
+router.get('/user/:id', async (req, res) => {
     try{
-        const profile = await Profile.findOne({ user: req.params.user_id }).populate('user', ['name', 'avatar']);
+        const profile = await Profile.findOne({ user: req.params.id }).populate('user', ['name', 'avatar']);
         if(!profile){
             return res.status(400).json({ msg: "Профиль не найден" });
         }
-
-        res.json(profile);
+        await res.json(profile);
     } catch (err){
         console.error(err.message);
         if(err.name === 'CastError'){
@@ -152,15 +151,38 @@ router.get('/user/:user_id', async (req, res) => {
 //@access Private
 //@desc   Delete profile
 
-router.delete('/', auth, async (req, res) => {
+router.delete('/:user_id', auth, async (req, res) => {
+    /*switch(req.params.user_id){
+        case req.user.id: break;
+        default: return await res.status(400).json({ msg: "Пользователь не найден" });
+    }*/
     try{
-        //@todo - remove users posts
+        //Remove User Posts
+        await Post.deleteMany({ user: req.user.id });
+        //Remove Profile
         await Profile.findOneAndRemove({ user: req.user.id });
+        //Remove User
         await User.findOneAndRemove({ _id: req.user.id });
-        res.json({ msg: "Пользователь был удалён" });
+        //Remove user avatar
+        const userPath = `${settings.PROJECT_DIR}/client/public/uploads/${req.user.id}`;
+        const rmDir = function(dirPath) {
+            if (fs.existsSync(dirPath)){
+                let files = fs.readdirSync(dirPath);
+                if (files.length > 0)
+                    for (let i = 0; i < files.length; i++) {
+                        const filePath = dirPath + '/' + files[i];
+                        if (fs.statSync(filePath).isFile()){ fs.unlinkSync(filePath); }
+                        else { rmDir(filePath); }
+                    }
+                fs.rmdirSync(dirPath);
+            }
+        };
+        rmDir(userPath);
+
+        await res.json({ msg: "Пользователь был удалён" });
     } catch (err){
         console.error(err.message);
-        res.status(500).send('Server Error');
+        await res.status(500).send('Server Error');
     }
 });
 
@@ -206,10 +228,10 @@ router.put('/experience', [
             const profile = await Profile.findOne({ user: req.user.id });
             profile.experience.unshift(newExp);
             await profile.save();
-            res.json(profile);
+            await res.json(profile);
         } catch (err){
             console.error(err.message);
-            res.status(500).send('Server Error');
+            await res.status(500).send('Server Error');
         }
     }
 );
@@ -226,10 +248,10 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
         const removeIndex = profile.experience.map(item => item.id).indexOf(req.params.exp_id);
         profile.experience.splice(removeIndex,1);
         await profile.save();
-        res.json(profile);
+        await res.json(profile);
    } catch (err){
        console.error(err.message);
-       res.status(500).send('Server Error');
+       await res.status(500).send('Server Error');
    }
 });
 
@@ -276,10 +298,10 @@ router.put('/education', [
             const profile = await Profile.findOne({ user: req.user.id });
             profile.education.unshift(newEducation);
             await profile.save();
-            res.json(profile);
+            await res.json(profile);
         } catch (err){
             console.error(err.message);
-            res.status(500).send('Server Error');
+            await res.status(500).send('Server Error');
         }
     }
 );
@@ -296,10 +318,10 @@ router.delete('/education/:ed_id', auth, async (req, res) => {
         const removeIndex = profile.education.map(item => item.id).indexOf(req.params.ed_id);
         profile.education.splice(removeIndex,1);
         await profile.save();
-        res.json(profile);
+        await res.json(profile);
     } catch (err){
         console.error(err.message);
-        res.status(500).send('Server Error');
+        await res.status(500).send('Server Error');
     }
 });
 
@@ -326,7 +348,7 @@ router.get('/github/:username', async (req, res) => {
 
    } catch (err){
         console.error(err.message);
-        req.status(500).send('Server Error');
+        await req.status(500).send('Server Error');
    }
 });
 
